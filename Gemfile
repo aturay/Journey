@@ -9,6 +9,10 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
+group :production do
+  gem 'pg'
+end
+
 gem 'puma', '~> 3.0'
 
 gem 'coffee-rails', '~> 4.2'
