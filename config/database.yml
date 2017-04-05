@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: Journey_production
-  username: Journey
+  # encoding: unicode
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: journey_production
+  # username: Journey
   password: <%= ENV['JOURNEY_DATABASE_PASSWORD'] %>
