@@ -1,0 +1,50 @@
+- if !user_signed_in?
+  = form_for @user do |f|
+    %h2 Регистрация
+
+    - if @user.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        %ul
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+
+    .field
+      = f.label :username
+      = f.text_field :username
+    .field
+      = f.label :email
+      = f.text_field :email
+    .field
+      = f.label :password
+      = f.text_field :password
+    .field
+      = f.label :phone
+      = f.text_field :phone
+    .field
+      = f.label :address
+      = f.text_field :address
+    .field
+      = f.label :city
+      = f.text_field :city
+    .field.file
+      = f.label :file
+      = f.file_field :file
+    -# .field
+    -#   = f.label :credentials
+    -#   = f.text_field :credentials
+    -# .field
+    -#   = f.label :nickname
+    -#   = f.text_field :nickname
+    -# .field
+    -#   = f.label :provider
+    -#   = f.text_field :provider
+    -# .field
+    -#   = f.label :url
+    -#   = f.text_field :url
+    .actions
+      = f.submit 'Зарегистрироваться'
+    .clear
+    %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
+- else
+  %h1 Вы авторизованный
