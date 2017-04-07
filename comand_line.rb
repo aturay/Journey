@@ -52,10 +52,12 @@ rails g scaffold User
   url:string
 
 rails g devise:install
+rails g devise:views
 rails g devise User
 rake db:migrate
 
 rails g controller Users::OmniauthCallbacks facebook vkontakte
+
 
 # rails g active_admin:devise
 # rails g active_admin:install

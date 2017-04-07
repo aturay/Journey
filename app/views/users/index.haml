@@ -1,35 +1,37 @@
-= form_tag("users/create", method: "post", id: 'login', class: "login") do
-  %h2 Авторизация
-  %label.icon-user{for: "user"} Логин:
-  %input#user.user/
-  %label.icon-lock{for: "password"} Пароль:
-  %input#password.password{type: "password"}/
-  %label{for: "remember"}
-    %input#remember{type: "checkbox"}/
-    %span.remember
-    Запомнить меня
-  = submit_tag('Войти')
-  .extra
-    = link_to 'Зарегистрироваться', new_user_url, class: 'forgetPassword'
+- if user_signed_in?
 
--# %h1 Reade all users
--# - model_class = User.new.class
--# %table.table.table-striped
--#   %thead
--#     %tr
--#       %th= model_class.human_attribute_name(:username)
--#       %th= model_class.human_attribute_name(:nickname)
--#       %th= model_class.human_attribute_name(:provider)
--#       %th= model_class.human_attribute_name(:sign_in_count)
--#       %th= model_class.human_attribute_name(:created_at)
--#       %th=t '.actions', :default => t("helpers.actions")
--#   %tbody
--#     - @users.each do |user|
--#       %tr
--#         %td= link_to user.username, user.url
--#         %td= user.nickname
--#         %td= user.provider
--#         %td= user.sign_in_count
--#         %td= user.created_at
--#         %td= link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(user), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+  - model_class = User.new.class
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= model_class.human_attribute_name(:username)
+        %th= model_class.human_attribute_name(:nickname)
+        %th= model_class.human_attribute_name(:provider)
+        %th= model_class.human_attribute_name(:sign_in_count)
+        %th= model_class.human_attribute_name(:created_at)
+        %th=t '.actions', :default => t("helpers.actions")
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= link_to user.username, user.url
+          %td= user.nickname
+          %td= user.provider
+          %td= user.sign_in_count
+          %td= user.created_at
+          %td= link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(user), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
 
+- else
+
+  = form_tag("users/create", method: "post", id: 'login', class: "login") do
+    %h2 Авторизация
+    %label.icon-user{for: "user"} Логин:
+    %input#user.user/
+    %label.icon-lock{for: "password"} Пароль:
+    %input#password.password{type: "password"}/
+    %label{for: "remember"}
+      %input#remember{type: "checkbox"}/
+      %span.remember
+      Запомнить меня
+    = submit_tag('Войти')
+    .extra
+      = link_to 'Зарегистрироваться', new_user_url, class: 'forgetPassword'

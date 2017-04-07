@@ -1,4 +1,6 @@
-- if !user_signed_in?
+- if user_signed_in?
+  %h1 Вы авторизованный
+- else
   = form_for @user do |f|
     %h2 Регистрация
 
@@ -10,25 +12,22 @@
             %li= msg
 
     .field
-      = f.label :username
+      = f.label :username, value: 'ФИО'
       = f.text_field :username
     .field
-      = f.label :email
+      = f.label :email, value: 'Почта'
       = f.text_field :email
     .field
-      = f.label :password
+      = f.label :password, value: 'Пароль'
       = f.text_field :password
     .field
-      = f.label :phone
+      = f.label :phone, value: 'Телефона'
       = f.text_field :phone
     .field
-      = f.label :address
-      = f.text_field :address
-    .field
-      = f.label :city
+      = f.label :city, value: 'Город'
       = f.text_field :city
     .field.file
-      = f.label :file
+      = f.label :file, value: 'Файл'
       = f.file_field :file
     -# .field
     -#   = f.label :credentials
@@ -46,5 +45,3 @@
       = f.submit 'Зарегистрироваться'
     .clear
     %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
-- else
-  %h1 Вы авторизованный
