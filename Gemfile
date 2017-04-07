@@ -9,9 +9,11 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'haml-rails'
+gem 'uglifier'
 gem 'jquery-rails'
 
 gem 'devise'
