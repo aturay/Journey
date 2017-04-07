@@ -1,3 +1,8 @@
+-# .devise_helper_methods_list
+-#   %ul
+-#     %li= after_sign_in_path_for
+-#     %li= after_sign_out_path_for
+
 - if user_signed_in?
 
   - model_class = User.new.class
@@ -21,17 +26,4 @@
           %td= link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(user), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
 
 - else
-
-  = form_tag("users/create", method: "post", id: 'login', class: "login") do
-    %h2 Авторизация
-    %label.icon-user{for: "user"} Логин:
-    %input#user.user/
-    %label.icon-lock{for: "password"} Пароль:
-    %input#password.password{type: "password"}/
-    %label{for: "remember"}
-      %input#remember{type: "checkbox"}/
-      %span.remember
-      Запомнить меня
-    = submit_tag('Войти')
-    .extra
-      = link_to 'Зарегистрироваться', new_user_url, class: 'forgetPassword'
+  %h1 юзер не афторизован

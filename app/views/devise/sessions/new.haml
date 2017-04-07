@@ -1,0 +1,17 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  %h2 Авторизация
+  .field
+    = f.label :email, value: 'Логин'
+    = f.email_field :email, autofocus: true
+  .field
+    = f.label :password, value: 'Пароль'
+    = f.password_field :password, autocomplete: "off"
+  .clear
+  .actions
+    = f.submit "Войти"
+  .clear
+  .extra
+    = link_to 'Зарегистрироваться', new_user_registration_path
+
+  -# .device_hleper_link= render "devise/shared/links"
+

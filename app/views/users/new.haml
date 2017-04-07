@@ -1,6 +1,8 @@
 - if user_signed_in?
   %h1 Вы авторизованный
+
 - else
+
   = form_for @user do |f|
     %h2 Регистрация
 
@@ -45,3 +47,4 @@
       = f.submit 'Зарегистрироваться'
     .clear
     %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
+
