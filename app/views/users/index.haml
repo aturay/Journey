@@ -1,35 +1,32 @@
-%h1 Админ панель
--# .devise_helper_methods_list
--#   %ul
--#     %li= after_sign_in_path_for
--#     %li= after_sign_out_path_for
+.admin_panel
+  %h1 Админ панель
 
-- if user_signed_in?
+  - if user_signed_in?
 
-  %table.table.table-striped
-    %thead
-      %tr
-        %th id
-        %th name
-        %th email
-        %th nickname
-        %th provider
-        %th url
-        %th sign_in_count
-        %th credentials
-        %th Action
-    %tbody
-      - @users.each do |user|
+    %table
+      %thead
         %tr
-          %td= link_to user.id, user
-          %td= link_to user.username, user.url
-          %td= user.email
-          %td= user.nickname
-          %td= user.provider
-          %td= user.url
-          %td= user.sign_in_count
-          %td= user.credentials
-          %td= link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(user), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+          %th Id
+          %th Name
+          %th Email
+          %th Nickname
+          %th Provider
+          %th URL
+          %th Count
+          %th Credentials
+          %th Action
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= link_to user.id, user
+            %td= link_to user.username, user.url || '-'
+            %td= user.email  || '-'
+            %td= user.nickname  || '-'
+            %td= user.provider  || '-'
+            %td= user.url  || '-'
+            %td= user.sign_in_count  || '-'
+            %td= user.credentials  || '-'
+            %td= link_to 'Destory', user_path(user), method: :delete, confirm: 'Are you sure?'
 
-- else
-  %h1 юзер не афторизован
+  - else
+    %h1 юзер не афторизован

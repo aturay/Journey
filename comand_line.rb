@@ -98,3 +98,13 @@ rails g controller Users::OmniauthCallbacks facebook vkontakte
 
   address:                nil,
 }
+
+{
+  email:     "mail16@gmail.com",
+  password:  "[FILTERED]",
+  password_confirmation: "[FILTERED]",
+  username:    "mail16",
+  phone:       "23243",
+  city:        "asdfs",
+  credentials: "hand"
+}
