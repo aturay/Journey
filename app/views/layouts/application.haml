@@ -3,9 +3,7 @@
   %head
     %title Journey
     = csrf_meta_tags
-    %link{:href => "http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel => "stylesheet prefetch"}/
-    = stylesheet_link_tag    'application', media: 'all'
-    -# %link{:href => "assets/style.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag 'application', media: 'all'
   %body
     #sign_in_status
       %ul.nav
@@ -21,15 +19,10 @@
         - else
 
           %li= link_to 'Войти', new_user_session_path
-          -# - resource_class.omniauth_providers.each do |provider|
-          -#   %li= link_to "Войти с #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
-          -# %br
           %li= link_to 'Зарегистрироваться', new_user_registration_path
           %li= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
 
     = yield
 
-    %canvas.blur{:src => "/assets/abstract-wallpaper-abstract-wallpapers.jpg"}
-
-    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+    %canvas.blur{src: asset_path("abstract-wallpaper-abstract-wallpapers.jpg")}
     = javascript_include_tag 'application'

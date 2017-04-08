@@ -1,0 +1,198 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900);
+* {
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  background: #221662;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  margin-bottom: -1px;
+}
+
+#sign_in_status {
+  width: 250px;
+  float: right;
+}
+
+#sign_in_status ul li a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#sign_in_status ul li a {
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#vk a {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+#vk a:hover {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+}
+
+.clear {
+  clear: both;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.75;
+  transform: scale(1.3);
+  animation: zoom 0.7s ease-out 0s 1;
+  z-index: -1;
+}
+
+form {
+  margin: auto;
+  width: 400px;
+  padding: 8px 12px 20px 12px;
+  border-radius: 10px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: inset -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+  box-shadow: inset -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 0px rgba(255, 255, 255, 0.3);
+  border: 1px solid #000;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.3)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+form h2 {
+  margin: 1em;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+}
+
+form .field {
+  height: 25px;
+  line-height: 25px;
+  margin-top: 15px;
+  clear: both;
+}
+form .actions {
+  text-align: center;
+  margin-top: 25px;
+}
+
+form .actions input {
+  float: right;
+}
+
+form .actions a {
+  margin-top: 10px;
+  display: inline-block;
+  margin-left: 76px;
+}
+
+form .field input {
+  width: 270px;
+  padding: .2em 20px;
+  border-radius: 15px;
+  font-size: 110%;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  border: 0;
+  /*box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.8) inset;*/
+  float: right;
+}
+
+form .file input {
+  border-radius: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding-left: 0;
+}
+
+form .actions input[type="submit"] {
+  height: 30px;
+  width: 270px;
+  background-color: #6bac14;
+  background-image: -webkit-gradient(linear, to bottom, to top, color-stop(0%, #8ff704), color-stop(100%, #1c8700));
+  background-image: -webkit-linear-gradient(to bottom, #8ff704, #1c8700);
+  background-image: -moz-linear-gradient(to bottom, #8ff704, #1c8700);
+  background-image: -o-linear-gradient(to bottom, #8ff704, #1c8700);
+  background-image: linear-gradient(to bottom, #8ff704, #1c8700);
+  border: 0;
+  border-radius: 25px;
+  box-shadow: 0 5px 2px #a6ee40 inset, 1px 1px 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor:pointer;
+}
+
+form .actions input[type="submit"]:hover {
+  opacity:0.9;
+}
+
+form .extra {
+  margin-top: 15px;
+  padding: 15px;
+  text-align: right;
+}
+
+form .extra a {
+  color: white;
+  font-style: 18px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+form .extra a:hover {
+  /*text-decoration: underline;*/
+  border-bottom: 1px solid white;
+}
+
+.device_hleper_link a {
+  color: white;
+}
+/*
+
+
+
+ */
+
