@@ -4,7 +4,7 @@
 - else
 
   = form_for @user do |f|
-    %h2 Регистрация
+    %h2 Зарегистрироваться
 
     - if @user.errors.any?
       #error_explanation
@@ -45,6 +45,10 @@
     -#   = f.text_field :url
     .actions
       = f.submit 'Зарегистрироваться'
+      - resource_class.omniauth_providers.each do |provider|
+        %br
+        = link_to "Войти с #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+
     .clear
     %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
 

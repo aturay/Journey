@@ -3,12 +3,9 @@
   password: пароль
 
 2. Зарегистрироваться
-  name: И
-  lastname: Ф
-  fadername: О
+  username: ФИО
   phone: Номер телефона
   email: Почтовый
-  address: Адрес
   city: Город
   password: Пароль (уникальным логином) (hash)
   file: запрашивается скан документа ((pdf \ image)
@@ -42,7 +39,6 @@ rails g scaffold User
   # email:string
   # password:string
   phone:string
-  address:string
   city:string
   file:has_attached_file
   credentials:string
@@ -76,3 +72,29 @@ rails g controller Users::OmniauthCallbacks facebook vkontakte
 
 
 
+{
+  id:                     2,
+  username:               nil,
+  email:                  "vasya_pupkin@pupkin.com",
+  phone:                  nil,
+  city:                   nil,
+  file:                   nil,
+  credentials:            nil,
+  nickname:               nil,
+  provider:               nil,
+  url:                    nil,
+  sign_in_count:          3,
+
+  created_at:             'Thu, 06 Apr 2017 19:16:22 UTC +00:00',
+  updated_at:             'Sat, 08 Apr 2017 08:37:43 UTC +00:00',
+  encrypted_password:     "2a$11$Ah5mNuLdZQW9vjv.XS49Bug5ddN78l5r37RfaTAGqXR4cvE9fuNX.",
+  reset_password_token:   nil,
+  reset_password_sent_at: nil,
+  remember_created_at:    nil,
+  current_sign_in_at:     'Sat, 08 Apr 2017 08:37:43 UTC +00:00',
+  last_sign_in_at:        'Fri, 07 Apr 2017 17:02:14 UTC +00:00',
+  current_sign_in_ip:     "127.0.0.1",
+  last_sign_in_ip:        "127.0.0.1"
+
+  address:                nil,
+}

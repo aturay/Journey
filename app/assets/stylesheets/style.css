@@ -30,7 +30,7 @@ a:hover {
 }
 
 #sign_in_status {
-  width: 300px;
+  width: 250px;
   float: right;
 }
 
@@ -78,7 +78,7 @@ a:hover {
 form {
   margin: auto;
   width: 400px;
-  padding: 8px 12px;
+  padding: 8px 12px 20px 12px;
   border-radius: 10px;
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
@@ -116,6 +116,12 @@ form .actions input {
   float: right;
 }
 
+form .actions a {
+  margin-top: 10px;
+  display: inline-block;
+  margin-left: 76px;
+}
+
 form .field input {
   width: 270px;
   padding: .2em 20px;
@@ -139,7 +145,7 @@ form .file input {
   padding-left: 0;
 }
 
-input[type="submit"] {
+form .actions input[type="submit"] {
   height: 30px;
   width: 270px;
   background-color: #6bac14;
@@ -159,7 +165,7 @@ input[type="submit"] {
   cursor:pointer;
 }
 
-input[type="submit"]:hover {
+form .actions input[type="submit"]:hover {
   opacity:0.9;
 }
 
