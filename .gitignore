@@ -6,3 +6,5 @@ tmp/*
 .byebug_history
 
 Gemfile.lock
+
+public/system/*

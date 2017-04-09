@@ -194,5 +194,7 @@ form .extra a:hover {
     border: 1px solid black;
     padding: 3px;
     text-align: center;
+    max-width: 200px;
+    overflow: hidden;
   }
 

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     registrations:      'users/registrations'
   }
 
-  resources :users#, :only => [:index, :destroy, :new]
+  resources :users, only: [:index, :destroy]
+  post 'users/:id', to: 'users#edit_event'
 
   root 'users#index'
 end

@@ -21,6 +21,16 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # POST /users/:id
+  def edit_event
+    user = User.find( params[:id] )
+    value = params[:status]
+
+    user.update_columns(credentials: value )#Time.current)
+
+    render json: { status: value }
+  end
+
   # POST /users
   # POST /users.json
   def create

@@ -8,10 +8,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   User.create sign_up_params
-  #   # super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -62,11 +61,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-
-  def upload
-    uploaded_io = params[:user][:file]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
-      file.write(uploaded_io.read)
-    end
-  end
 end

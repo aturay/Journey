@@ -41,11 +41,14 @@ rails g scaffold User
   phone:string
   city:string
   file:attachment
-  credentials:string
 
   nickname:string
   provider:string
   url:string
+
+  credentials:string
+  blocked_date:datetime
+
 
 rails g devise:install
 rails g devise:views
