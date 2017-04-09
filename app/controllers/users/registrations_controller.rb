@@ -41,12 +41,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, :username, :phone, :city, :credentials])
+    devise_parameter_sanitizer.permit(:sign_up,
+      keys: [ :email, :password, :password_confirmation, :username, :phone,
+              :city, :credentials, :file])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :username, :phone, :city, :credentials])
+    devise_parameter_sanitizer.permit(:account_update,
+      keys: [ :email, :password, :password_confirmation, :username, :phone,
+              :city, :credentials, :file])
   end
 
   # The path used after sign up.
@@ -58,4 +62,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def upload
+    uploaded_io = params[:user][:file]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'w') do |file|
+      file.write(uploaded_io.read)
+    end
+  end
 end

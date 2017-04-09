@@ -1,5 +1,6 @@
 .admin_panel
   %h1 Админ панель
+  %i Real time update
 
   - if user_signed_in?
 
@@ -13,20 +14,23 @@
           %th Provider
           %th URL
           %th Count
-          %th Credentials
+          %th File
+          %th Статус
           %th Action
       %tbody
         - @users.each do |user|
           %tr
             %td= link_to user.id, user
             %td= link_to user.username, user.url || '-'
-            %td= user.email  || '-'
-            %td= user.nickname  || '-'
-            %td= user.provider  || '-'
-            %td= user.url  || '-'
-            %td= user.sign_in_count  || '-'
-            %td= user.credentials  || '-'
+            %td= user.email || '-'
+            %td= user.nickname || '-'
+            %td= user.provider || '-'
+            %td= user.url || '-'
+            %td= user.sign_in_count || '-'
+            %td= user.file ? link_to(user.file.name, user.file.url) : '-'
+            %td= user.credentials || '-'
             %td= link_to 'Destory', user_path(user), method: :delete, confirm: 'Are you sure?'
 
+      -# Real time update!
   - else
-    %h1 юзер не афторизован
+    %h1 Вы не афторизованны

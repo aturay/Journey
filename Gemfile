@@ -14,11 +14,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
 
+gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-vkontakte'
+
+gem "paperclip", "~> 5.0.0"
 
 group :development do
   gem 'byebug', platform: :mri

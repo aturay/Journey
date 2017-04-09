@@ -40,7 +40,7 @@ rails g scaffold User
   # password:string
   phone:string
   city:string
-  file:has_attached_file
+  file:attachment
   credentials:string
 
   nickname:string
