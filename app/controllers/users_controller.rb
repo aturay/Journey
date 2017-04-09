@@ -5,6 +5,26 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+
+    if current_user
+      case current_user.credentials
+      when 'hand'
+        @msg = 'Ваша заявка на регистрацию находится на рассмотрении у модератора.'
+      when 'accept'
+        @msg = "Спасибо, #{current_user.username}, Ваша  заявка на  регистрацию успешно подтверждена  модератором,  добро пожаловать!"
+      when 'reject'
+        @msg = "К сожалению, #{current_user.username}, Ваша заявка  на  регистрацию отклонена из-за несоответствия  переданных  данных"
+      when 'block'
+        @msg = "Ара #{current_user.username} ты заблакирован "
+      when 'vk'
+        @msg = "Добро  пожаловать, #{current_user.username},  вы  успешно авторизовались через соц сеть"
+      when 'admin'
+        @msg = "#{current_user.username} - приражденный админ"
+      else
+        @msg = 'Пользователь не определен!'
+      end
+    end
+
   end
 
   # GET /users/1
