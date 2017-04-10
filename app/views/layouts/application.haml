@@ -10,7 +10,7 @@
 
         - if user_signed_in?
           %li= link_to "#{current_user.username} (#{current_user.provider})", current_user.url
-          %li= current_user.email
+          %li#current_user_mail= current_user.email
           %li
             Статус
             = current_user.credentials

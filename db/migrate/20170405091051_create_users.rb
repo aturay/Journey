@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :city
       t.attachment :file
       t.string :credentials
+      t.datetime :blocked_date
 
       t.string :nickname
       t.string :provider

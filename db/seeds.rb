@@ -1,3 +1,7 @@
 # rails db:seed
 # rails db:setup
-User.create(username: 'mail', city: 'spb', credentials: 'admin', email: 'mail@gmail.com', password: 'password')
+User.create(  username:    'Admin',
+              city:        'Spb',
+              email:       'admin@gmail.com',
+              password:    'password',
+              credentials: 'admin')

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       when 'vk'
         @msg = "Добро  пожаловать, #{current_user.username},  вы  успешно авторизовались через соц сеть"
       when 'admin'
-        @msg = "#{current_user.username} - приражденный админ"
+        @msg = "#{current_user.username} - прирожденный админ"
       else
         @msg = 'Пользователь не определен!'
       end
@@ -44,11 +44,12 @@ class UsersController < ApplicationController
   # POST /users/:id
   def edit_event
     user = User.find( params[:id] )
-    value = params[:status]
+    status = params[:status]
+    current_time = Time.current
 
-    user.update_columns(credentials: value )#Time.current)
+    user.update_columns(credentials: status, blocked_date: current_time)
 
-    render json: { status: value }
+    render json: { status: status, blocked_date: current_time }
   end
 
   # POST /users
