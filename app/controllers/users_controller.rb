@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       when 'reject'
         @msg = "К сожалению, #{current_user.username}, Ваша заявка  на  регистрацию отклонена из-за несоответствия  переданных  данных"
       when 'block'
-        @msg = "Ара #{current_user.username} ты заблакирован "
+        @msg = "#{current_user.username} Вас заблакироваали!"
       when 'vk'
         @msg = "Добро  пожаловать, #{current_user.username},  вы  успешно авторизовались через соц сеть"
       when 'admin'

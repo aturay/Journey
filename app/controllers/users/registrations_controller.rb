@@ -9,6 +9,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    # ActionCable.server.broadcast(
+    #   "user_#{room}",
+    #   sent_by: 'Paul',
+    #   body: 'This is a cool chat app.'
+    # )
+
+    # UserChannel.broadcast_to(
+    #   current_user,
+    #   title: 'New things!',
+    #   body: 'All the news fit to print'
+    # )
+
     super
   end
 
