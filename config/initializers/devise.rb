@@ -251,7 +251,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # url: https://vk.com/editapp?id=5967554&section=options
-  config.omniauth :vkontakte, '5967554', 'IHqx4XTTVQ38aQtMBTKe'
+  config.omniauth :vkontakte, '5967554', 'IHqx4XTTVQ38aQtMBTKe', scope: "email"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-vkontakte'
+# gem 'omniauth-vk'
+
 
 gem "paperclip", "~> 5.0.0"
 
