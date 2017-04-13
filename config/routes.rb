@@ -3,9 +3,9 @@ Rails.application.routes.draw do
     get 'omniauth_callbacks/vkontakte'
   end
 
-  devise_scope :user do
-    get "/users/omniauth_callbacks/vkontakte" => "some_devise_controller"
-  end
+  # devise_scope :user do
+  #   get "/users/omniauth_callbacks/vkontakte" => "some_devise_controller"
+  # end
 
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",

@@ -50,5 +50,6 @@
         = link_to "Войти с #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
 
     .clear
-    %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
+    -# %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
+    %h2#vk= link_to "Sign in with Vkontakte", user_vkontakte_omniauth_callback_path
 
