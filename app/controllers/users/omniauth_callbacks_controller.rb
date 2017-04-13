@@ -17,6 +17,10 @@ class Users::OmniauthCallbacksController <  Devise::OmniauthCallbacksController
   #   user = User.from_omniauth(data)
   #   user.persisted? ? sign_in_and_redirect(user) : redirect_to(new_user_registration_path)
   # end
+
+  def failure
+    redirect_to root_path
+  end
 end
 
 # class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
@@ -33,7 +37,4 @@ end
 #     end
 #   end
 
-#   def failure
-#     redirect_to root_path
-#   end
 # end
