@@ -9,19 +9,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    # ActionCable.server.broadcast(
-    #   "user_#{room}",
-    #   sent_by: 'Paul',
-    #   body: 'This is a cool chat app.'
-    # )
-
-    # UserChannel.broadcast_to(
-    #   current_user,
-    #   title: 'New things!',
-    #   body: 'All the news fit to print'
-    # )
-
     super
+
+    ActionCable.server.broadcast('user',
+      user: current_user,
+      file_url: current_user.file ? current_user.file.url : 'javascript.void(0)',
+      sign_in_count: current_user.sign_in_count || 1
+    )
   end
 
   # GET /resource/edit
