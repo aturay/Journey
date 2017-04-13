@@ -10,20 +10,20 @@
       %table
         %thead
           %tr
-            %th Name
-            %th Email
+            %th Имя
+            %th Почта
             -# %th Nickname
             -# %th Provider
-            %th URL
-            %th Count
-            %th File
+            -# %th URL
+            %th Кол. вход
+            %th Файл
             %th Статус
             %th Время
 
-            %th Action
-            %th Action
-            %th Action
-            %th Action
+            %th Действия
+            %th Действия
+            %th Действия
+            %th Действия
         %tbody#ws_new_user
           - @users.each do |user|
             %tr
@@ -31,7 +31,7 @@
               %td.item_user_mail= user.email || '-'
               -# %td= user.nickname || '-'
               -# %td= user.provider || '-'
-              %td= user.url || '-'
+              -# %td= user.url || '-'
               %td= user.sign_in_count || '-'
               %td= user.file ? link_to(user.file_file_name, user.file.url, target: '_blank') : '-'
               %td.status= user.credentials || '-'
@@ -41,7 +41,6 @@
               %td.action= link_to 'Отклонить', user_path(user) + '?status=reject'
               %td.action= link_to 'Заблакировать', user_path(user) + '?status=block'
               %td= link_to 'Удалить', user_path(user), method: :delete, confirm: 'Are you sure?'
-
-        -# Real time update!
   - else
     %h1 Вы не афторизованны
+    = link_to 'афторизация', new_user_session_path

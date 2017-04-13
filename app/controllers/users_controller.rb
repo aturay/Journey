@@ -23,6 +23,8 @@ class UsersController < ApplicationController
       else
         @msg = 'Пользователь не определен!'
       end
+    else
+      redirect_to new_user_session_path
     end
 
   end
