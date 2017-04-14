@@ -19,7 +19,6 @@ App.cable.subscriptions.create {
     <tr>
       <td><a href="/users/#{user.id}">#{user.username}</a></td>
       <td class="item_user_mail">#{user.email}</td>
-      <td>#{user.url || '-'}</td>
       <td>#{user.sign_in_count}</td>
       <td><a target="_blank" href="#{user.file_url}">#{user.file_file_name}</a></td>
       <td class="status">#{user.email}</td>

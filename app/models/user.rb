@@ -5,6 +5,7 @@ class User < ApplicationRecord
           :trackable, :validatable, :omniauthable, omniauth_providers: [:vkontakte]
 
   def self.find_for_vkontakte_oauth access_token
+
     if user = User.where(:url => access_token.info.urls.Vkontakte).first
       user
     else
