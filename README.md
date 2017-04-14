@@ -1,10 +1,10 @@
 # User journey
 
 ## Stack
-Ruby 2.3.1
-Rails 5.0.2
-pg 0.18
-Redis 3.0
++ Ruby 2.3.1
++ Rails 5.0.2
++ pg 0.18
++ Redis 3.0
 
 ## Install
 ```
@@ -16,8 +16,8 @@ rails db:migrate
 rails db:seed
 rails s
 ```
-+ *Login:* admin
-+ *Pass:*  password
++ *Login:* __admin__
++ *Pass:*  __password__
 
 
 ## Task
