@@ -15,7 +15,7 @@ class Users::OmniauthCallbacksController <  Devise::OmniauthCallbacksController
 
   def failure
     logger.debug '========================='
-    logger.debug request
+    logger.debug request.env["omniauth.auth"]
     logger.debug '========================='
     redirect_to root_path
   end
