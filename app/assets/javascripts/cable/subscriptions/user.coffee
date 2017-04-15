@@ -8,21 +8,27 @@ App.cable.subscriptions.create {
   appendLine: (data) ->
     user = data.user
     user.file_url = data.file_url
-    user.sign_in_count = data.sign_in_count
+    user.sign_in_count = 1
 
     html = @createLine( user )
     $("#ws_new_user").append(html)
 
   createLine: (user) ->
-    console.log user
+    console.log user.file_url
+    file = user.file_url ? "<a target='_blank' href='#{user.file_url}'>#{user.file_file_name}</a>" : '-'
+
     """
     <tr>
       <td><a href="/users/#{user.id}">#{user.username}</a></td>
+      <td>#{user.phone}</td>
       <td class="item_user_mail">#{user.email}</td>
+      <td>#{user.city}</td>
+      <td>#{file}</td>
+
       <td>#{user.sign_in_count}</td>
-      <td><a target="_blank" href="#{user.file_url}">#{user.file_file_name}</a></td>
-      <td class="status">#{user.email}</td>
+      <td class="status">#{user.credentials}</td>
       <td class="blocked_date">#{user.blocked_date || '-'}</td>
+
       <td class="action"><a href="/users/#{user.id}?status=accept">Принять</a></td>
       <td class="action"><a href="/users/#{user.id}?status=reject">Отклонить</a></td>
       <td class="action"><a href="/users/#{user.id}?status=block">Заблакировать</a></td>

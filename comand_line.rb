@@ -83,7 +83,7 @@ rails g migration AddColumnsToUsers provider uid
   city:                   nil,
   file:                   nil,
   credentials:            nil,
-  nickname:               nil,
+
   provider:               nil,
   url:                    nil,
   sign_in_count:          3,
@@ -110,4 +110,42 @@ rails g migration AddColumnsToUsers provider uid
   phone:       "23243",
   city:        "asdfs",
   credentials: "hand"
+}
+
+
+
+data:
+{
+  credentials: {
+    expires: true
+    expires_at: 1492344292
+    token: "99ea133facb796234b98dce8b2c46b837d25d024a7b77d5912cbaa63caa7c1a7769748cf88502f11ce655"},
+  extra: {
+    raw_info: {
+      bdate: "3.3"
+      city: {id: 56, title: "Ижевск"},
+      country: {id: 1 title: "Россия"},
+      first_name: "Атур",
+      id: 324697677
+      last_name: "Авчян"
+      nickname: ""
+      online: 0
+      photo_100: "https://pp.userapi.com/c604419/v604419677/2c7a1/VR12LtDL8zM.jpg"
+      photo_200: "https://pp.userapi.com/c604419/v604419677/2c7a0/IPr_HtnxWdA.jpg"
+      photo_200_orig: "https://pp.userapi.com/c604419/v604419677/2c79e/hMX3SaMlDNk.jpg"
+      photo_400_orig: "https://pp.userapi.com/c604419/v604419677/2c79f/tEh7XCzKp3w.jpg"
+      photo_50: "https://pp.userapi.com/c604419/v604419677/2c7a2/_FREl98h7Xs.jpg"
+      screen_name: "id324697677"
+      sex: 2 } },
+  info: {::InfoHash
+    email: nil
+    name: "Атур Авчян"
+    first_name: "Атур"
+    last_name: "Авчян"
+    location: "Россия, Ижевск"
+    image: "https://pp.userapi.com/c604419/v604419677/2c7a2/_FREl98h7Xs.jpg"
+    nickname: ""
+    urls: {Vkontakte: "http://vk.com/id324697677"} },
+  provider: "vkontakte"
+  uid: "324697677"
 }

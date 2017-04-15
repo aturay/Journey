@@ -13,8 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     ActionCable.server.broadcast('user',
       user: current_user,
-      file_url: (current_user && current_user.file) ? current_user.file.url : 'javascript.void(0)',
-      sign_in_count: current_user && current_user.sign_in_count || 1
+      file_url: (current_user && current_user.file) ? current_user.file.url : 'javascript.void(0)'
     )
   end
 

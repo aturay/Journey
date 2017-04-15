@@ -11,14 +11,15 @@
         %thead
           %tr
             %th Имя
+            %th Телефон
             %th Почта
-            -# %th Nickname
-            -# %th Provider
-            -# %th URL
-            %th Кол. вход
+            %th Город
             %th Файл
+
+            %th Кол. вход
             %th Статус
-            %th Время
+            %th Ссылка на соцсеть
+            %th Время редактирование
 
             %th Действия
             %th Действия
@@ -27,14 +28,15 @@
         %tbody#ws_new_user
           - @users.each do |user|
             %tr
-              %td= link_to user.username, user
+              %td= user.username
+              %td= user.phone || '-'
               %td.item_user_mail= user.email || '-'
-              -# %td= user.nickname || '-'
-              -# %td= user.provider || '-'
-              -# %td= user.url || '-'
-              %td= user.sign_in_count || '-'
+              %td= user.city || '-'
               %td= user.file ? link_to(user.file_file_name, user.file.url, target: '_blank') : '-'
+
+              %td= user.sign_in_count || '-'
               %td.status= user.credentials || '-'
+              %td= user.url ? link_to(user.provider, user.url, target: '_blank') : '-'
               %td.blocked_date= user.blocked_date || '-'
 
               %td.action= link_to 'Принять', user_path(user) + '?status=accept'

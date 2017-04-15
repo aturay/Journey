@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /users
   # GET /users.json
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
         @msg = "К сожалению, #{current_user.username}, Ваша заявка  на  регистрацию отклонена из-за несоответствия  переданных  данных"
       when 'block'
         @msg = "#{current_user.username} Вас заблакироваали!"
-      when 'vk'
+      when 'social'
         @msg = "Добро  пожаловать, #{current_user.username},  вы  успешно авторизовались через соц сеть"
       when 'admin'
         @msg = "#{current_user.username} - прирожденный админ"

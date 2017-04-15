@@ -27,8 +27,5 @@
     = f.hidden_field :credentials, value: 'hand'
     = f.submit "Зарегистрироваться"
     %br
-    = link_to "Sign in with Vkontakte", user_vkontakte_omniauth_callback_path
-    -# = link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
+    = link_to "Sign in with Vkontakte", user_vkontakte_omniauth_authorize_path
   .clear
-
-  -# .device_hleper_link= render "devise/shared/links"

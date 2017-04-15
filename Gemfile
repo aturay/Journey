@@ -17,12 +17,12 @@ gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
+
+gem 'therubyracer'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth2', '~> 1.4'
 gem 'omniauth-vkontakte'
-# gem 'omniauth-vk'
-
 
 gem "paperclip", "~> 5.0.0"
 

@@ -1,55 +1,54 @@
-- if user_signed_in?
-  %h1 Вы авторизованный
+-# - if user_signed_in?
+-#   %h1 Вы авторизованный
 
-- else
+-# - else
 
-  = form_for @user do |f|
-    %h2 Зарегистрироваться
+-#   = form_for @user do |f|
+-#     %h2 Зарегистрироваться
 
-    - if @user.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-        %ul
-          - @user.errors.full_messages.each do |msg|
-            %li= msg
-        .clear
-    .field
-      = f.label :username, value: 'ФИО'
-      = f.text_field :username
-    .field
-      = f.label :email, value: 'Почта'
-      = f.text_field :email
-    .field
-      = f.label :password, value: 'Пароль'
-      = f.text_field :password
-    .field
-      = f.label :phone, value: 'Телефона'
-      = f.text_field :phone
-    .field
-      = f.label :city, value: 'Город'
-      = f.text_field :city
-    .field.file
-      = f.label :file, value: 'Файл'
-      = f.file_field :file
-    -# .field
-    -#   = f.label :credentials
-    -#   = f.text_field :credentials
-    -# .field
-    -#   = f.label :nickname
-    -#   = f.text_field :nickname
-    -# .field
-    -#   = f.label :provider
-    -#   = f.text_field :provider
-    -# .field
-    -#   = f.label :url
-    -#   = f.text_field :url
-    .actions
-      = f.submit 'Зарегистрироваться'
-      - resource_class.omniauth_providers.each do |provider|
-        %br
-        = link_to "Войти с #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+-#     - if @user.errors.any?
+-#       #error_explanation
+-#         %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+-#         %ul
+-#           - @user.errors.full_messages.each do |msg|
+-#             %li= msg
+-#         .clear
+-#     .field
+-#       = f.label :username, value: 'ФИО'
+-#       = f.text_field :username
+-#     .field
+-#       = f.label :email, value: 'Почта'
+-#       = f.text_field :email
+-#     .field
+-#       = f.label :password, value: 'Пароль'
+-#       = f.text_field :password
+-#     .field
+-#       = f.label :phone, value: 'Телефона'
+-#       = f.text_field :phone
+-#     .field
+-#       = f.label :city, value: 'Город'
+-#       = f.text_field :city
+-#     .field.file
+-#       = f.label :file, value: 'Файл'
+-#       = f.file_field :file
+-#     -# .field
+-#     -#   = f.label :credentials
+-#     -#   = f.text_field :credentials
+-#     -# .field
+-#     -#   = f.label :nickname
+-#     -#   = f.text_field :nickname
+-#     -# .field
+-#     -#   = f.label :provider
+-#     -#   = f.text_field :provider
+-#     -# .field
+-#     -#   = f.label :url
+-#     -#   = f.text_field :url
+-#     .actions
+-#       = f.submit 'Зарегистрироваться'
+-#       - resource_class.omniauth_providers.each do |provider|
+-#         %br
+-#         = link_to "Войти с #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
 
-    .clear
-    -# %h2#vk= link_to "Sign in with Vkontakte", users_omniauth_callbacks_vkontakte_path
-    %h2#vk= link_to "Sign in with Vkontakte", user_vkontakte_omniauth_callback_path
+-#     .clear
+-#     %h2#vk= link_to "Sign in with Vkontakte", user_vkontakte_omniauth_authorize_path
 
