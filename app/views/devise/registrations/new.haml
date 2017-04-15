@@ -4,13 +4,13 @@
 
   .field
     = f.label :email
-    = f.email_field :email, autofocus: true
+    = f.email_field :email, autofocus: true, required: true
   .field
     = f.label :password, value: 'Пароль'
-    = f.password_field :password, autocomplete: "off"
+    = f.password_field :password, autocomplete: "off", required: true
   .field
     = f.label :password_confirmation, value: 'Повторить '
-    = f.password_field :password_confirmation, autocomplete: "off"
+    = f.password_field :password_confirmation, autocomplete: "off", required: true
   .field
     = f.label :username, value: 'ФИО'
     = f.text_field :username
@@ -22,10 +22,10 @@
     = f.text_field :city
   .field.file
     = f.label :file, value: 'Документ'
-    = f.file_field :file
+    = f.file_field :file, required: true
   .actions
     = f.hidden_field :credentials, value: 'hand'
     = f.submit "Зарегистрироваться"
     %br
-    = link_to "Sign in with Vkontakte", user_vkontakte_omniauth_authorize_path
+    = link_to "Войти с ВКонтакте", user_vkontakte_omniauth_authorize_path
   .clear

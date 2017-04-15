@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     registrations:      'users/registrations'
   }
 
-
   post 'users/:id', to: 'users#edit_event'
   resources :users
 
