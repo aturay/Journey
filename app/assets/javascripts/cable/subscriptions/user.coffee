@@ -14,8 +14,15 @@ App.cable.subscriptions.create {
     $("#ws_new_user").append(html)
 
   createLine: (user) ->
-    console.log user.file_url
-    file = user.file_url ? "<a target='_blank' href='#{user.file_url}'>#{user.file_file_name}</a>" : '-'
+    if user.file?
+      file = "<a target='_blank' href='#{user.file_url}'>#{user.file_file_name}</a>"
+    else
+      file = '-'
+
+    if user.url
+      url = "<a href=#{user.url} target='_blank'>#{user.provider}</a>"
+    else
+      url = '-'
 
     """
     <tr>
@@ -27,6 +34,7 @@ App.cable.subscriptions.create {
 
       <td>#{user.sign_in_count}</td>
       <td class="status">#{user.credentials}</td>
+      <td>#{url}</td>
       <td class="blocked_date">#{user.blocked_date || '-'}</td>
 
       <td class="action"><a href="/users/#{user.id}?status=accept">Принять</a></td>
