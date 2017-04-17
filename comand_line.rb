@@ -149,3 +149,14 @@ data:
   provider: "vkontakte"
   uid: "324697677"
 }
+
+
+git branch atest
+git checkout atest
+
+gem 'rspec-rails', '~> 3.5'
+bundle
+rails generate rspec:install
+
+git add -A
+git commit -m 'add gem rspec and install'

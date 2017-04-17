@@ -26,8 +26,12 @@ gem 'omniauth-vkontakte'
 
 gem "paperclip", "~> 5.0.0"
 
-group :development do
+group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+end
+
+group :development do
   gem 'mysql2', '>= 0.3.18', '< 0.5'
 
   gem 'web-console', '>= 3.3.0'
