@@ -7,7 +7,18 @@ development:
   host: localhost
   pool: 5
 
+
 production:
   adapter: postgresql
   encoding: utf8
   database: journey_production
+
+
+test:
+  adapter: mysql2
+  username: root
+  password: password
+  encoding: utf8
+  database: journey_development_test
+  host: localhost
+  pool: 5

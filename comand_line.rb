@@ -42,7 +42,7 @@ rails g scaffold User
   city:string
   file:attachment
 
-  nickname:string
+  # nickname:string
   provider:string
   url:string
 
@@ -62,6 +62,21 @@ rails g migration AddColumnsToUsers provider uid
 # rails g active_admin:install
 
 
+
+git branch atest
+git checkout atest
+
+gem 'rspec-rails', '~> 3.5'
+bundle
+rails generate rspec:install
+
+git add -A
+git commit -m 'add gem rspec and install'
+git branch atest
+git push --set-upstream origin atest
+git marge atest
+
+rails generate rspec:model User
 
 
 
@@ -151,12 +166,10 @@ data:
 }
 
 
-git branch atest
-git checkout atest
+{ extra: {raw_info: {city: {title: "Ижевск"}}},
+  info: {
+    email: 'user@mail.com',
+    name: "User Name",
+    urls: {Vkontakte: "vk.com"} },
+}
 
-gem 'rspec-rails', '~> 3.5'
-bundle
-rails generate rspec:install
-
-git add -A
-git commit -m 'add gem rspec and install'
